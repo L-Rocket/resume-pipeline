@@ -2,6 +2,20 @@
 
 A privacy-first, bilingual, LaTeX-first resume template for application-ready PDFs.
 
+## One-prompt setup
+
+Git is part of this workflow, but you do not need to install or configure the toolchain manually. Open a terminal-capable coding agent, copy the complete prompt from [SETUP_PROMPT.md](SETUP_PROMPT.md), and send it unchanged.
+
+The agent will:
+
+1. identify your operating system;
+2. install Git, Make, Python, Tectonic, and `pdfinfo` using trusted package sources;
+3. clone this repository without overwriting an existing directory;
+4. run the environment doctor; and
+5. compile and verify all three one-page PDFs.
+
+The supported beginner path is macOS or Ubuntu, including Ubuntu under WSL. Installation pauses when administrator approval, a restart, or a decision about existing files is required.
+
 The repository contains:
 
 - two English one-page variants for full-time and co-op applications;
@@ -15,9 +29,10 @@ All committed content is fictional placeholder material. Replace it locally with
 
 Requirements:
 
-- Tectonic or XeLaTeX for English PDFs
-- XeLaTeX with CTeX for the Chinese PDF
-- Python 3.11 or later
+- Git
+- Make
+- Tectonic for all PDFs
+- Python 3.9 or later
 - `pdfinfo` for one-page output verification
 
 Build everything:
@@ -30,6 +45,7 @@ Build or verify the PDFs:
 
 ```bash
 make latex
+make doctor
 make verify
 ```
 
