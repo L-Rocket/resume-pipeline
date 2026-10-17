@@ -1,0 +1,40 @@
+# Generated documents
+build/
+*.pdf
+*.docx
+
+# LaTeX intermediates
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+*.xdv
+
+# Private resume and application material
+application/
+applications/
+application_tracker.md
+info/
+private/
+transcript*
+*transcript*
+*photo*
+*.pem
+*.key
+.env
+.env.*
+
+# Tools and operating systems
+.DS_Store
+.playwright-cli/
+.pytest_cache/
+__pycache__/
+*.pyc
+.venv/

@@ -1,0 +1,64 @@
+% Shared style for the English resume variants.
+\usepackage[left=0.67in,right=0.67in,top=0.55in,bottom=0.55in]{geometry}
+\usepackage{lmodern}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{microtype}
+\usepackage{ragged2e}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{hyperref}
+
+\definecolor{accent}{HTML}{111827}
+\hypersetup{colorlinks=true,urlcolor=accent}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\tabcolsep}{0pt}
+\raggedbottom
+
+\newlength{\dateColumnWidth}
+\setlength{\dateColumnWidth}{1.65in}
+\newcolumntype{Y}{>{\RaggedRight\arraybackslash}X}
+
+\titleformat{\section}{\normalsize\bfseries\color{accent}}{}{0pt}{}[\color{accent}\titlerule]
+\titlespacing*{\section}{0pt}{5pt}{2pt}
+
+\newenvironment{resumeList}
+  {\begin{itemize}[label={},leftmargin=0pt,nosep]}
+  {\end{itemize}}
+
+\newenvironment{resumeBullets}
+  {\begin{itemize}[label=\raisebox{0.18ex}{\textbullet},leftmargin=1.25em,
+    labelsep=0.55em,topsep=1pt,itemsep=1.5pt,parsep=0pt,partopsep=0pt]}
+  {\end{itemize}}
+
+\newcommand{\resumeEducation}[5]{
+  \item
+  \begin{tabularx}{\textwidth}{@{}Y>{\RaggedLeft\arraybackslash}p{\dateColumnWidth}@{}}
+    \textbf{#1} & #4 \\
+    \textit{#3} & \textit{#2} \\
+    #5 &
+  \end{tabularx}\vspace{1pt}
+}
+
+\newcommand{\resumeHeading}[4]{
+  \item
+  \begin{tabularx}{\textwidth}{@{}Y>{\RaggedLeft\arraybackslash}p{\dateColumnWidth}@{}}
+    \textbf{#1} & \small #4 \\
+    \textit{\small #2} & \textit{\small #3}
+  \end{tabularx}\vspace{-3pt}
+}
+
+\newcommand{\resumeItem}[1]{
+  \item\begingroup\normalsize\justifying
+  \hyphenpenalty=500\exhyphenpenalty=500 #1\par\endgroup
+}
+
+\newcommand{\skillItem}[2]{
+  \item\begingroup\normalsize\justifying
+  \textbf{#1} #2\par\endgroup
+}
+
+\newcommand{\entryGap}{\vspace{4pt}}

@@ -1,0 +1,82 @@
+\documentclass[letterpaper,10pt]{article}
+\input{resume_style.tex}
+
+\hypersetup{pdfauthor={Resume Owner},pdftitle={Full Time Resume Template}}
+
+\begin{document}
+
+\begin{center}
+{\fontsize{18}{21}\selectfont\bfseries Your Name\par}
+\vspace{4pt}
+\small
+\href{mailto:you@example.com}{you@example.com}
+\quad\textbar\quad +1 (555) 010-1234
+\quad\textbar\quad \href{https://github.com/your-handle}{github.com/your-handle}
+\quad\textbar\quad \href{https://www.linkedin.com/in/your-handle}{linkedin.com/in/your-handle}
+\par\vspace{2pt}
+\textit{Seeking full-time software engineering roles starting May 2026}
+\end{center}
+
+\section{Education}
+\begin{resumeList}
+\resumeEducation
+  {Example University}
+  {Aug 2024--May 2026}
+  {Master of Science in Computer Science}
+  {Example City, ST}
+  {GPA: 3.90/4.00}
+\resumeEducation
+  {Sample College}
+  {Aug 2020--May 2024}
+  {Bachelor of Science in Computer Engineering}
+  {Sample City, ST}
+  {GPA: 3.80/4.00}
+\end{resumeList}
+\vspace{-8pt}
+
+\section{Work Experience}
+\begin{resumeList}
+\resumeHeading
+  {Example Labs}
+  {Software Engineering Intern}
+  {May 2025--Aug 2025}
+  {Example City, ST}
+\begin{resumeBullets}
+\resumeItem{Built a production \textbf{Python} service that processed \textbf{1.2 million events per day} and reduced p95 latency by \textbf{38\%}.}
+\resumeItem{Added integration tests and deployment checks that reduced rollback incidents from \textbf{five per quarter to one}.}
+\resumeItem{Partnered with two product teams to define service-level metrics and publish operational dashboards.}
+\end{resumeBullets}
+\end{resumeList}
+\vspace{-2pt}
+
+\section{Project Experience}
+\begin{resumeList}
+\resumeHeading
+  {QueueScope}
+  {Python / FastAPI / PostgreSQL / Docker}
+  {Jan 2025--Apr 2025}
+  {}
+\begin{resumeBullets}
+\resumeItem{Built an operations dashboard for asynchronous jobs with searchable traces, retry controls, and role-based access.}
+\resumeItem{Added load tests for \textbf{5,000 concurrent jobs} and documented the system's performance envelope.}
+\end{resumeBullets}
+\entryGap
+\resumeHeading
+  {FieldNotes}
+  {TypeScript / React / SQLite}
+  {Sep 2024--Dec 2024}
+  {}
+\begin{resumeBullets}
+\resumeItem{Implemented offline-first synchronization and deterministic conflict resolution for structured notes.}
+\end{resumeBullets}
+\end{resumeList}
+\vspace{-2pt}
+
+\section{Technical Skills}
+\begin{resumeList}
+\skillItem{Languages:}{Python, TypeScript, SQL}
+\skillItem{Frameworks:}{FastAPI, React}
+\skillItem{Infrastructure:}{PostgreSQL, Docker, GitHub Actions}
+\end{resumeList}
+
+\end{document}
