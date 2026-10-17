@@ -1,9 +1,8 @@
 [project]
 name = "resume-pipeline"
 version = "0.1.0"
-description = "Privacy-first bilingual LaTeX and Word resume pipeline"
+description = "Privacy-first bilingual LaTeX resume pipeline"
 requires-python = ">=3.11"
-dependencies = ["python-docx==1.2.0"]
 
 [tool.ruff]
 line-length = 100

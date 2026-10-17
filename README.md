@@ -1,12 +1,11 @@
 # Resume Pipeline
 
-A privacy-first, bilingual resume template that keeps application-ready LaTeX and Word outputs in sync.
+A privacy-first, bilingual, LaTeX-first resume template for application-ready PDFs.
 
 The repository contains:
 
 - two English one-page variants for full-time and co-op applications;
 - one Chinese LaTeX resume;
-- a deterministic LaTeX-to-Word generator for the English variants;
 - a pre-publication privacy check; and
 - CI checks that reject common secrets, private application records, transcripts, and accidental personal data.
 
@@ -19,8 +18,7 @@ Requirements:
 - Tectonic or XeLaTeX for English PDFs
 - XeLaTeX with CTeX for the Chinese PDF
 - Python 3.11 or later
-- `uv` or an environment containing `python-docx`
-- LibreOffice for optional Word-to-PDF verification
+- `pdfinfo` for one-page output verification
 
 Build everything:
 
@@ -28,11 +26,10 @@ Build everything:
 make all
 ```
 
-Build individual formats:
+Build or verify the PDFs:
 
 ```bash
 make latex
-make docx
 make verify
 ```
 
@@ -99,9 +96,7 @@ Edit these source files:
 - `reference/resume_master_en.md`
 - `reference/resume_master_cn.md`
 
-The English Word documents are generated from the English LaTeX sources. Do not edit generated `.docx` files directly.
-
-The Word parser recognizes these commands in the English sources:
+The English templates share these commands:
 
 ```tex
 \resumeEducation{school}{dates}{degree}{location}{detail}
@@ -110,13 +105,13 @@ The Word parser recognizes these commands in the English sources:
 \skillItem{label}{skills}
 ```
 
-Keep the section names `Education`, `Work Experience`, `Project Experience`, and `Technical Skills` unchanged unless you also update the parser.
+Keep reusable layout commands in `latex/resume_style.tex` so the full-time and co-op variants remain visually consistent.
 
 ## Privacy model
 
 This project is designed to prevent the most common resume-repository leaks:
 
-- generated PDFs and Word files are ignored;
+- generated PDFs and document artifacts are ignored;
 - application trackers, transcripts, photographs, browser captures, and application folders are blocked;
 - non-example email addresses and phone numbers are rejected by the privacy check;
 - local absolute paths and common secret formats are rejected; and
@@ -135,8 +130,8 @@ The scanner is a guardrail, not a guarantee. Review staged changes and Git histo
 ```text
 latex/       LaTeX sources and shared style
 reference/   comprehensive bilingual content-bank templates
-scripts/     Word generation and privacy checks
-tests/       parser and privacy-check tests
+scripts/     privacy and generated-output checks
+tests/       privacy-check tests
 build/       generated artifacts, ignored by Git
 ```
 
